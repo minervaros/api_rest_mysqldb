@@ -6,6 +6,10 @@ app = Flask(__name__)
 
 db = MySQL(app)
 
+@app.route('/')
+def index():
+    return jsonify({'mensaje': 'accede a la ruta /usuarios'})
+
 @app.route('/users', methods=['POST'])
 def añadir_users():
 
